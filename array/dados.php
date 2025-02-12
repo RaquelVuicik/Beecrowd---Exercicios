@@ -213,3 +213,158 @@ echo "</pre>";
 echo '<hr>';
 
 
+echo '<h2>Array Pad</h2>';
+// Quando precisamos que o array tenha 
+// um tamanho minimo para o sistema funcionar.
+
+$array = [
+    'A',
+    'B',
+    'C'
+];
+
+echo "<pre>";
+print_r($array);
+echo "</pre>";
+
+echo "<pre>";
+print_r(array_pad($array,10,'sem posição'));
+echo "</pre>";
+
+echo '<hr>';
+
+
+echo '<h2>Array Shift</h2>';
+// Fila: o primeiro array que chegou tem que ser o primeiro a sair.
+
+$array = [
+    'A',
+    'B',
+    'C'
+];
+
+echo "<pre>";
+print_r($array);
+echo "</pre>";
+
+echo "<pre>";
+print_r(array_shift($array));
+echo "</pre>";
+
+echo "<pre>";
+print_r(array_shift($array));
+echo "</pre>";
+
+echo "<pre>";
+print_r($array);
+echo "</pre>";
+
+echo '<hr>';
+
+
+echo '<h2>Array Unshift</h2>';
+// Colocar valores dentro do array, na frente dos outros.
+
+$array = [
+    'A',
+    'B',
+    'C'
+];
+
+echo "<pre>";
+print_r($array);
+echo "</pre>";
+
+array_unshift($array,'W','I');
+
+echo "<pre>";
+print_r($array);
+echo "</pre>";
+
+echo '<hr>';
+
+
+echo '<h2>Array Pop</h2>';
+// Pilha: O ultimo que entrou tem que ser o priemiro a sair.
+
+$array = [
+    'A',
+    'B',
+    'C'
+];
+
+echo "<pre>";
+print_r($array);
+echo "</pre>";
+
+echo "<pre>";
+echo array_pop($array);
+echo "</pre>";
+
+echo "<pre>";
+echo array_pop($array);
+echo "</pre>";
+
+echo "<pre>";
+print_r($array);
+echo "</pre>";
+
+echo '<hr>';
+
+
+echo '<h2>Unset</h2>';
+// Apagar posição de um array.
+
+$array = [
+    'A',
+    'B',
+    'C'
+];
+
+echo "<pre>";
+print_r($array);
+echo "</pre>";
+
+unset($array[1]);
+
+echo "<pre>";
+print_r($array);
+echo "</pre>";
+
+echo '<hr>';
+
+
+echo '<h2>Array Map</h2>';
+// Para mapear os dados do array
+
+$array = [
+    [
+        'id' => 1,
+        'nome' => 'William',
+        'idade' => 24
+    ],
+    [
+        'id' => 2,
+        'nome' => 'Alberto',
+        'idade' => 22
+    ],
+    [
+        'id' => 3,
+        'nome' => 'Maria',
+        'idade' => 36
+    ],
+];
+
+echo "<pre>";
+print_r($array);
+echo "</pre>";
+
+$map = array_map(function($value){
+    $value['nome'] = strtolower($value['nome']);
+    $value['novo'] = rand(100,200);
+    return $value;
+}, $array);
+
+echo "<pre>";
+print_r($map);
+echo "</pre>";
